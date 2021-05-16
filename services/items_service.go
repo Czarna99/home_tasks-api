@@ -11,7 +11,7 @@ var (
 )
 
 type itemsServiceInterface interface {
-	Create(item items.Item) (*items.Item, *errors.RestErr)
+	Create(items.Item) (*items.Item, *errors.RestErr)
 	Get(string) (*items.Item, *errors.RestErr)
 }
 
