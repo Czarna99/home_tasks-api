@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.com/Pawelek242/home_oauth-api/src/utils/errors"
-	"github.com/Pawelek242/home_tasks-api/items"
+	"github.com/Pawelek242/home_tasks-api/domain/items"
+	"github.com/Pawelek242/home_utils-go/rest_errors"
 )
 
 var (
@@ -11,16 +11,16 @@ var (
 )
 
 type itemsServiceInterface interface {
-	Create(items.Item) (*items.Item, *errors.RestErr)
-	Get(string) (*items.Item, *errors.RestErr)
+	Create(items.Item) (*items.Item, rest_errors.RestErr)
+	Get(string) (*items.Item, rest_errors.RestErr)
 }
 
 type itemsService struct{}
 
-func (s *itemsService) Create(item items.Item) (*items.Item, *errors.RestErr) {
-	return nil, errors.NewBadRequest(append(err, "not implemented"))
+func (s *itemsService) Create(item items.Item) (*items.Item, rest_errors.RestErr) {
+	return nil, rest_errors.NewNotFoundError("not implemented")
 }
 
-func (s *itemsService) Get(string) (*items.Item, *errors.RestErr) {
-	return nil, errors.NewBadRequest(append(err, "not implemented"))
+func (s *itemsService) Get(string) (*items.Item, rest_errors.RestErr) {
+	return nil, rest_errors.NewNotFoundError("not implemented")
 }
